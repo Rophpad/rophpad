@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Header() {
     return (
-        <header className="w-full py-8 backdrop-blur bg-[#141a20]/80 sticky top-0 z-50 flex items-center justify-between px-8">
+        <header className="w-2/3 py-8 backdrop-blur bg-[#141a20]/80 sticky top-0 z-50 flex items-center justify-between px-8">
             <Link href="/" className="flex items-center justify-center">
                 <Image
                     src="/profile_pic.jpeg"

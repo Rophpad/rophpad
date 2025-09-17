@@ -15,10 +15,10 @@ export default function Home() {
     { name: "discord", link: "https://github.com/Rophpad" },
   ];
   return (
-    <div className="w-full font-sans grid grid-rows-[20px_1fr_20px] items- justify-items-center h-full py-8 px-16">
+    <div className="w-full font-sans grid grid-rows-[20px_1fr_20px] items- justify-items-center h-full py- px-">
       <Header />
       <div className="mt-16 flex flex-col gap-16">
-        <div className="w-full max-w-3xl h- flex flex-col items-center gap-8 ">
+        <div className="w-full max-w-2xl h- flex flex-col items-center gap-8 ">
           <div className="w-full border-b border-white/10 py-4 flex items-center gap-4">
             {/* <Image
               src="/profile_pic.jpeg"
