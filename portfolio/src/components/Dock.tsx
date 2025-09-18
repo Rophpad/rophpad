@@ -12,7 +12,7 @@ export default function Dock() {
 
     const currentRoute = usePathname();
     return (
-        <nav className="w-max h-max bg-[#141a20]/80 border border-white/10 sticky bottom-4 rounded-full p-2 flex items-center justify-center space-x-4">
+        <nav className="w-max h-max bg-[#0b0b0b]/80 border border-white/10 sticky bottom-4 rounded-full p-2 flex items-center justify-center space-x-4">
             {navigationItems.map((item, index) => {
                 return (
                     <Link key={index} href={item.route} className={`${currentRoute === item.route ? 'border border-white/10 bg-white/5' : ''} hover:border hover:border-white/5 hover:bg-white/2 rounded-full py-2 px-2 flex items-center justify-center space-x-3 cursor-pointer`}>
