@@ -3,7 +3,7 @@ import ProjectCard from "@/components/ProjectCard";
 import SocialIcon from "@/components/SocialIcon";
 import TalkCard from "@/components/TalkCard";
 import WorkCard from "@/components/WorkCard";
-import Image from "next/image";
+// import Image from "next/image";
 
 export default function Home() {
   const socialIconStyle = "p-2 size-10 border border-white/10 rounded-lg hover:bg-white/5 transition-colors cursor-pointer";
@@ -18,17 +18,17 @@ export default function Home() {
   return (
     <div className="w-full font-sans items- justify-items-center h-full py- px-">
       <Header />
-      <div className="w-full px-8 lg:px-0 lg:w-1/2 mt-8 flex flex-col gap-16">
-        <div className="w-full max-w-2xl h- flex flex-col items-center gap-8 ">
+      <div className="w-full px-8 lg:px-0 lg:max-w-2xl mt-8 flex flex-col gap-16">
+        <div className="w-full h- flex flex-col items-center gap-8 ">
           <div className="w-full border-b border-white/10 py-4 flex items-center gap-4">
-            <Image
+            {/* <Image
               src="/profile_pic.jpeg"
               alt="Profile Picture"
               width={100}
               height={100}
               className="rounded-full size-10 object-cover cursor-pointer"
-            />
-            <h1 className="text-2xl font-medium">{`Hi, I'm Roph PAD`}</h1>
+            /> */}
+            <h1 className="text-2xl font-medium">{`Roph PAD`}</h1>
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" className="size-6 cursor-pointer fill-white/90 hover:fill-white/80">
               <path fill="" d="M19 11.975q0-2.075-1.1-3.787t-2.95-2.563q-.375-.175-.55-.537t-.05-.738q.15-.4.538-.575t.787 0Q18.1 4.85 19.55 7.063T21 11.974t-1.45 4.913t-3.875 3.287q-.4.175-.788 0t-.537-.575q-.125-.375.05-.737t.55-.538q1.85-.85 2.95-2.562t1.1-3.788M7 15H4q-.425 0-.712-.288T3 14v-4q0-.425.288-.712T4 9h3l3.3-3.3q.475-.475 1.088-.213t.612.938v11.15q0 .675-.612.938T10.3 18.3zm9.5-3q0 1.05-.475 1.988t-1.25 1.537q-.25.15-.513.013T14 15.1V8.85q0-.3.263-.437t.512.012q.775.625 1.25 1.575t.475 2" />
             </svg>
