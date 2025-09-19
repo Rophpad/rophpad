@@ -1,8 +1,13 @@
+import Dock from "@/components/Dock"
+
 export default function OthersPage() {
   return (
-    <div className="w-full h-lvh font-sans justify-items-center py-8 px-16">
-      <h1 className="text-4xl font-bold mb-4">Others Page</h1>
-      <p className="mb-8">This is the others page content.</p>
+    <div className="w-full font-sans items- justify-items-center h-full py- px- border border-green-600 overflow-y-auto no-scrollbar">
+
+      <div className="h-full">
+        other page
+      </div>
+      <Dock />
     </div>
   );
 }
