@@ -1,5 +1,4 @@
 import AudioReader from "@/components/AudioReader";
-import Header from "@/components/Header";
 import ProjectCard from "@/components/ProjectCard";
 import SocialIcon from "@/components/SocialIcon";
 import TalkCard from "@/components/TalkCard";
