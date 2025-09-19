@@ -34,13 +34,13 @@ export default function Home() {
           </div>
           <div className="w-full flex flex-col gap-6">
             <p>
-              {`I'm Rophen PADONOU. I love building products that make complex problems simple and delightful. I enjoy working with data, maps, and clean interfaces.`}
-            </p>
-            <p >
-              {`On weekends, you'll usually find me playing basketball, or exploring the world.`}
+              {`I'm [Your Name]. I love building intuitive products that bridge the gap between complex technology and everyday users. I enjoy working with AI systems, user interfaces, and thoughtful design solutions.`}
             </p>
             <p>
-              {`Currently building AI tooling and SDKs at Composio as senior software engineer. Previously lead product and design at Locale.ai`}
+              {`When I'm not coding, you'll usually find me [your hobby/interest], or discovering new places and experiences.`}
+            </p>
+            <p>
+              {`Currently building AI tooling at Tekas Africa as a designer and engineer. Previously [your previous role/company if applicable].`}
             </p>
           </div>
           <div className="w-full flex gap-4">
