@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import {  Roboto } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 import Dock from "@/components/Dock";
+import Header from "@/components/Header";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -33,10 +34,11 @@ export default function RootLayout({
       <body
         className={` ${roboto.variable} antialiased text-[15px] flex flex-col items-center justify-center min-h-screen `}
       >
+        <Header />
 
         {children}
         <Dock />
-    
+
       </body>
     </html>
   );
