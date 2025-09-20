@@ -19,7 +19,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Roph PAD",
+  title: "Roph's Website",
   description: "Roph PAD Portfolio",
 };
 
