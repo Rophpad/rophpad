@@ -32,13 +32,13 @@ export default function Home() {
           </div>
           <div className="w-full flex flex-col gap-6">
             <p>
-              {`I'm [Your Name]. I love building intuitive products that bridge the gap between complex technology and everyday users. I enjoy working with AI systems, user interfaces, and thoughtful design solutions.`}
+              {`I'm Rophen PADONOU. I love building intuitive products that bridge the gap between complex technology and everyday users. I enjoy working with AI systems, user interfaces, and thoughtful design solutions.`}
             </p>
             <p>
-              {`When I'm not coding, you'll usually find me [your hobby/interest], or discovering new places and experiences.`}
+              {`When I'm not coding, you'll usually find me playing BasketBall, or discovering new places and experiences.`}
             </p>
             <p>
-              {`Currently building AI tooling at Tekas Africa as a designer and engineer. Previously [your previous role/company if applicable].`}
+              {`Currently building AI tooling at Tekas Africa as a designer and engineer. Previously freelance developer and designer.`}
             </p>
           </div>
           <div className="w-full flex gap-4">
@@ -46,7 +46,6 @@ export default function Home() {
               socialNetworks.map((socialNetwork, index) => {
                 return (
                   <SocialIcon key={index} name={socialNetwork.name} link={socialNetwork.link} style={socialIconStyle} />
-
                 )
               })
             }
