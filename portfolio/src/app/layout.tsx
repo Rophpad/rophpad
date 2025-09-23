@@ -3,6 +3,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import Dock from "@/components/Dock";
 import Header from "@/components/Header";
+import App from "@/components/App";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -32,13 +33,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` ${roboto.variable} antialiased text-[15px] flex flex-col items-center justify-center min-h-screen `}
+        className={` ${roboto.variable} antialiased text-[15px]  min-h-screen `}
       >
-        <Header />
-
-        {children}
-        <Dock />
-
+        <App>
+          <Header />
+          {children}
+          <Dock />
+        </App>
       </body>
     </html>
   );
