@@ -3,9 +3,12 @@ import ProjectCard from "@/components/ProjectCard";
 import SocialIcon from "@/components/SocialIcon";
 import WorkCard from "@/components/WorkCard";
 import ArticleCard from "@/components/ArticleCard";
+import { Project } from "@/types/project";
 
 
 import { aboutme, projects, works, articles, socialNetworks } from "@/informations"
+import { Work } from "@/types/work";
+import { Article } from "@/types/Article";
 
 export default function Home() {
   const socialIconStyle = "p-2 size-10 border border-white/10 rounded-lg hover:bg-white/5 transition-colors cursor-pointer";
@@ -48,7 +51,7 @@ export default function Home() {
           <div className="w-full ">
             {/* Projects list */}
             {
-              projects.map((project: any, index: any) => {
+              projects.map((project: Project, index: number) => {
                 return (
                   <ProjectCard
                     key={index}
@@ -71,7 +74,7 @@ export default function Home() {
           <div className="w-full">
             {/* Works list */}
             {
-              works.map((work: any, index: any) => {
+              works.map((work: Work, index: number) => {
                 return (
                   <WorkCard
                     key={index}
@@ -94,7 +97,7 @@ export default function Home() {
 
           <div className="w-full">
             {
-              articles.map((article: any, index: any) => {
+              articles.map((article: Article, index: number) => {
                 return (
                   <ArticleCard
                     key={index}

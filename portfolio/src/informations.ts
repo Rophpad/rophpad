@@ -1,4 +1,13 @@
-export const aboutme = {
+import { Article } from "./types/Article";
+import { Project } from "./types/project";
+import { Work } from "./types/work";
+
+export const aboutme: {
+  username: string;
+  profile: string;
+  interests: string;
+  workStatus: string;
+} = {
   username: "Roph PAD",
   profile:
     "I'm Rophen PADONOU. I love building intuitive products that bridge the gap between complex technology and everyday users. I enjoy working with AI systems, user interfaces, and thoughtful design solutions.",
@@ -8,7 +17,7 @@ export const aboutme = {
     "Currently building AI tooling at Tekas Africa as a designer and engineer. Previously freelance developer and designer.",
 };
 
-export const projects = [
+export const projects: Project[] = [
   {
     name: "introcam",
     logo: "introcam.png",
@@ -17,7 +26,7 @@ export const projects = [
   },
 ];
 
-export const works = [
+export const works: Work[] = [
   {
     company: "AEIG",
     role: "FullStack dev",
@@ -26,7 +35,7 @@ export const works = [
   },
 ];
 
-export const articles = [
+export const articles: Article[] = [
   {
     title: "What happens when typing www.google.com ?",
     field: "Web",
@@ -36,7 +45,7 @@ export const articles = [
   },
 ];
 
-export const socialNetworks = [
+export const socialNetworks: { name: string; link: string }[] = [
   { name: "github", link: "https://github.com/Rophpad" },
   // { name: "x", link: "https://github.com/Rophpad" },
   // { name: "telegram", link: "https://github.com/Rophpad" },
