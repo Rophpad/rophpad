@@ -3,12 +3,10 @@ import ProjectCard from "@/components/ProjectCard";
 import SocialIcon from "@/components/SocialIcon";
 import WorkCard from "@/components/WorkCard";
 import ArticleCard from "@/components/ArticleCard";
-import { Project } from "@/types/project";
-
-
-import { aboutme, projects, works, articles, socialNetworks } from "@/informations"
-import { Work } from "@/types/work";
+import { Project } from "@/types/Project";
+import { Work } from "@/types/Work";
 import { Article } from "@/types/Article";
+import { aboutme, projects, works, articles, socialNetworks } from "@/informations"
 
 export default function Home() {
   const socialIconStyle = "p-2 size-10 border border-white/10 rounded-lg hover:bg-white/5 transition-colors cursor-pointer";
@@ -80,6 +78,8 @@ export default function Home() {
                     key={index}
                     company={work.company}
                     role={work.role}
+                    description={work.description}
+                    projects={work.projects || []}
                     startDate={work.startDate}
                     endDate={work.endDate}
                   />

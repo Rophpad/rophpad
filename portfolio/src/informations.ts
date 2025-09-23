@@ -1,6 +1,6 @@
 import { Article } from "./types/Article";
-import { Project } from "./types/project";
-import { Work } from "./types/work";
+import { Project } from "./types/Project";
+import { Work } from "./types/Work";
 
 export const aboutme: {
   username: string;
@@ -30,6 +30,8 @@ export const works: Work[] = [
   {
     company: "AEIG",
     role: "FullStack dev",
+    description: "Worked on various web development projects, focusing on both frontend and backend tasks to deliver comprehensive solutions.",
+    projects: ["Job matching and recruitment platform", "Company website redesign"],
     startDate: "Jan 2025",
     endDate: "Jul 2025",
   },
