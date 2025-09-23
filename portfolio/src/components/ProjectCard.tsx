@@ -1,21 +1,33 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ProjectCard() {
+export default function ProjectCard(
+    {
+        name,
+        logo,
+        link,
+        description
+    }: {
+        name: string,
+        logo: string,
+        link: string,
+        description: string;
+    }
+) {
     return (
-        <Link href="https://introcam.pagy.site" target="_blank" className="flex items-center">
+        <Link href={link} target="_blank" className="flex items-center">
             <div className="w-full flex items-center justify-between gap-4 px-2 py-4">
                 <div className="flex items-center justify-center gap-4">
                     <Image
-                        src="/introcam.png"
-                        alt=""
+                        src={`/${logo}`}
+                        alt="project-logo"
                         width={100}
                         height={100}
                         className="size-10 object-cover rounded-lg "
                     />
                     <div className="h-full w-full">
-                        <h3 className="text- font-medium">introcam</h3>
-                        <p className="text-sm text-gray-400">Description of project 1</p>
+                        <h3 className="text- font-medium">{name}</h3>
+                        <p className="text-sm text-gray-400">{description}</p>
                     </div>
                 </div>
                 <div>
