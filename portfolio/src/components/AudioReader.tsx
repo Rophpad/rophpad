@@ -1,23 +1,189 @@
 "use client"
 
+import { useState, useRef, useEffect } from "react";
+import { Play, Pause, X } from "lucide-react";
+
 export default function AudioReader() {
-    return (
-        <div
-            className="flex items-center justify-center rounded-full p-1 bg-white transition-colors"
-        >
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                className="size-3 cursor-pointer fill-black/50 hover:size-4 transition-all duration-300"
-            >
-                <path
-                    fill=""
-                    d="M19 11.975q0-2.075-1.1-3.787t-2.95-2.563q-.375-.175-.55-.537t-.05-.738q.15-.4.538-.575t.787 0Q18.1 4.85 19.55 7.063T21 11.974t-1.45 4.913t-3.875 3.287q-.4.175-.788 0t-.537-.575q-.125-.375.05-.737t.55-.538q1.85-.85 2.95-2.562t1.1-3.788M7 15H4q-.425 0-.712-.288T3 14v-4q0-.425.288-.712T4 9h3l3.3-3.3q.475-.475 1.088-.213t.612.938v11.15q0 .675-.612.938T10.3 18.3zm9.5-3q0 1.05-.475 1.988t-1.25 1.537q-.25.15-.513.013T14 15.1V8.85q0-.3.263-.437t.512.012q.775.625 1.25 1.575t.475 2"
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [audioUrl, setAudioUrl] = useState<string | null>(null);
+    const [audioLevels, setAudioLevels] = useState<number[]>(Array(24).fill(0));
+    const [currentTime, setCurrentTime] = useState(0);
+    const [duration, setDuration] = useState(0);
+    const [showWaveform, setShowWaveform] = useState(false);
+    const [isClient, setIsClient] = useState(false);
+    const audioRef = useRef<HTMLAudioElement>(null);
+
+   
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
+
+    const loadAudioFile = () => {
+        // Load the actual audio file
+        setAudioUrl('/audio/demo.mp3');
+        setShowWaveform(true);
+        
+        // Generate waveform data only on client side
+        if (isClient) {
+            const newLevels = Array(24).fill(0).map(() => Math.random() * 28 + 8);
+            setAudioLevels(newLevels);
+        }
+        
+        // Auto-play after loading
+        setTimeout(() => {
+            if (audioRef.current) {
+                audioRef.current.play().then(() => {
+                    setIsPlaying(true);
+                }).catch((error) => {
+                    console.error('Audio playback failed:', error);
+                });
+            }
+        }, 100); // Small delay to ensure audio element is ready
+    };
+
+    // Update time and duration from actual audio
+    useEffect(() => {
+        if (!audioRef.current) return;
+
+        const audio = audioRef.current;
+        
+        const updateTime = () => {
+            setCurrentTime(audio.currentTime);
+            setDuration(audio.duration || 0);
+        };
+
+        const handleLoadedMetadata = () => {
+            setDuration(audio.duration || 0);
+        };
+
+        const handleEnded = () => {
+            setIsPlaying(false);
+            setCurrentTime(0);
+        };
+
+        audio.addEventListener('timeupdate', updateTime);
+        audio.addEventListener('loadedmetadata', handleLoadedMetadata);
+        audio.addEventListener('ended', handleEnded);
+
+        return () => {
+            audio.removeEventListener('timeupdate', updateTime);
+            audio.removeEventListener('loadedmetadata', handleLoadedMetadata);
+            audio.removeEventListener('ended', handleEnded);
+        };
+    }, [audioUrl]);
+
+    const generateWaveform = () => {
+        if (!isClient) return []; // Return empty array during SSR
+        
+        const bars = [];
+        const progressRatio = duration > 0 ? currentTime / duration : 0;
+        
+        for (let i = 0; i < 24; i++) {
+            const height = audioLevels[i] || 12;
+            const isActive = i < progressRatio * 24;
+            
+            bars.push(
+                <div
+                    key={i}
+                    className={`w-1 rounded-full transition-all duration-300 ease-out ${
+                        isActive 
+                            ? 'bg-white shadow-sm' 
+                            : 'bg-white/20 hover:bg-white/30'
+                    }`}
+                    style={{ 
+                        height: `${height}px`,
+                        transform: isPlaying && isActive ? 'scaleY(1.1)' : 'scaleY(1)'
+                    }}
                 />
-            </svg>
+            );
+        }
+        return bars;
+    };
+
+    const handlePlayToggle = () => {
+        if (!audioUrl) {
+            loadAudioFile();
+            return;
+        }
+
+        if (!showWaveform) {
+            setShowWaveform(true);
+            return;
+        }
+
+        if (audioRef.current) {
+            if (isPlaying) {
+                audioRef.current.pause();
+                setIsPlaying(false);
+            } else {
+                audioRef.current.play().then(() => {
+                    setIsPlaying(true);
+                }).catch((error) => {
+                    console.error('Audio playback failed:', error);
+                });
+            }
+        }
+    };
+
+    const handleClose = () => {
+        if (audioRef.current) {
+            audioRef.current.pause();
+        }
+        setIsPlaying(false);
+        setShowWaveform(false);
+        setCurrentTime(0);
+        setAudioUrl(null);
+    };
+
+    return (
+        <div className="flex items-center gap-3">
+            {/* Play/Pause/Close Button */}
+            <div className="relative group">
+                <button
+                    onClick={!showWaveform || !isPlaying ? handlePlayToggle : handleClose}
+                    className="flex items-center justify-center w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/10 transition-all duration-300 hover:scale-105"
+                >
+                    {!showWaveform ? (
+                        <Play className="w-4 h-4 text-white/80 ml-0.5" />
+                    ) : isPlaying ? (
+                        <Pause className="w-3.5 h-3.5 text-white/80" />
+                    ) : (
+                        <Play className="w-4 h-4 text-white/80 ml-0.5" />
+                    )}
+                </button>
+                
+                {/* Close button when playing */}
+                {showWaveform && isPlaying && (
+                    <button
+                        onClick={handleClose}
+                        className="absolute -top-1 -right-1 flex items-center justify-center w-5 h-5 rounded-full bg-white/90 hover:bg-white text-gray-600 hover:text-gray-800 transition-all duration-200 opacity-0 group-hover:opacity-100"
+                    >
+                        <X className="w-3 h-3" />
+                    </button>
+                )}
+            </div>
+
+            {/* Waveform */}
+            {showWaveform && (
+                <div className="flex items-center gap-0.5">
+                    {generateWaveform()}
+                </div>
+            )}
+
+            {/* Time display */}
+            {showWaveform && (
+                <div className="text-xs text-white/60 font-mono min-w-[3rem]">
+                    {Math.floor(currentTime / 60)}:{Math.floor(currentTime % 60).toString().padStart(2, '0')}
+                </div>
+            )}
+
+            {audioUrl && (
+                <audio
+                    ref={audioRef}
+                    src={audioUrl}
+                    style={{ display: 'none' }}
+                />
+            )}
         </div>
     );
 }
-
