@@ -14,7 +14,7 @@ export const aboutme: {
   interests:
     "When I'm not coding, you'll usually find me playing BasketBall, or discovering new places and experiences.",
   workStatus:
-    "Currently building AI tooling at Tekas Africa as a designer and engineer. Previously freelance developer and designer.",
+    "Currently building cool stuffs at Tekas Labs. Previously freelance developer and designer.",
 };
 
 export const projects: Project[] = [
