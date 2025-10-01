@@ -7,11 +7,11 @@ export default function Header() {
             <div className="px-8 lg:px-0 w-2xl flex items-center justify-between ">
                 <Link href="/" className="flex items-center justify-center">
                     <Image
-                        src="/pic.png"
+                        src="/logo.png"
                         alt="Profile Picture"
                         width={100}
                         height={100}
-                        className="rounded-full size-10 object-cover cursor-pointer"
+                        className=" size-10 object-cover cursor-pointer"
                     />
                     {/* <span className="text-xl font-medium">ROPH PAD</span> */}
                 </Link>

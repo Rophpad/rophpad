@@ -15,7 +15,7 @@ export default function Home() {
     <div className="w-full font-sans items- justify-items-center h-full py- px-">
       <div className="w-full px-8 lg:px-0 lg:max-w-2xl mt-8 flex flex-col gap-16">
         <div className="w-full h- flex flex-col items-center gap-8 ">
-          <div className="w-full border-b border-white/10 py-4 flex items-center gap-4">
+          <div className="w-full border-b border-white/10 py-4 flex items-center gap-4" id="about-me">
             <h1 className="text-2xl font-medium">{`${aboutme.username}`}</h1>
             <AudioReader />
           </div>
@@ -41,9 +41,9 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-full max-w-3xl h- flex flex-col items-center gap-8 ">
+        <div className="w-full max-w-3xl h- flex flex-col items-center gap-8 " id="projects">
           <div className="w-full border-b border-dotted border-spacing-8 border-white/10 py-4 flex items-center gap-4">
-            <h2 className="text-xl font-medium">Projects</h2>
+            <h2 className="text-xl font-medium" >Projects</h2>
           </div>
 
           <div className="w-full ">
@@ -64,7 +64,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-full max-w-3xl h- flex flex-col items-center gap-8 ">
+        <div className="w-full max-w-3xl h- flex flex-col items-center gap-8 " id="works">
           <div className="w-full border-b border-dotted border-spacing-8 border-white/10 py-4 flex items-center gap-4">
             <h2 className="text-xl font-medium">Works</h2>
           </div>
@@ -90,7 +90,7 @@ export default function Home() {
         </div>
 
 
-        <div className="w-full max-w-3xl h- flex flex-col items-center gap-8 ">
+        <div className="w-full max-w-3xl h- flex flex-col items-center gap-8 " id="articles">
           <div className="w-full border-b border-dotted border-spacing-8 border-white/10 py-4 flex items-center gap-4">
             <h2 className="text-xl font-medium">Articles</h2>
           </div>

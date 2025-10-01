@@ -1,22 +1,15 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Figtree } from "next/font/google";
 import "./globals.css";
 import Dock from "@/components/Dock";
 import Header from "@/components/Header";
 import App from "@/components/App";
 
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
-
-const roboto = Roboto({
-  variable: "--font-roboto",
+const figtree = Figtree({
+  variable: "--font-figtree",
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
   subsets: ["latin"],
 });
 
@@ -33,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body
-        className={` ${roboto.variable} antialiased text-[15px]  min-h-screen `}
+        className={` ${figtree.className} antialiased text-[15px]  min-h-screen `}
       >
         <App>
           <Header />

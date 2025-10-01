@@ -24,6 +24,48 @@ export const projects: Project[] = [
     link: "https://introcam.pagy.site",
     description: "Record presentation video while reading script.",
   },
+  {
+    name: "introcam",
+    logo: "introcam.png",
+    link: "https://introcam.pagy.site",
+    description: "Record presentation video while reading script.",
+  },
+  {
+    name: "introcam",
+    logo: "introcam.png",
+    link: "https://introcam.pagy.site",
+    description: "Record presentation video while reading script.",
+  },
+  {
+    name: "introcam",
+    logo: "introcam.png",
+    link: "https://introcam.pagy.site",
+    description: "Record presentation video while reading script.",
+  },
+  {
+    name: "introcam",
+    logo: "introcam.png",
+    link: "https://introcam.pagy.site",
+    description: "Record presentation video while reading script.",
+  },
+  {
+    name: "introcam",
+    logo: "introcam.png",
+    link: "https://introcam.pagy.site",
+    description: "Record presentation video while reading script.",
+  },
+  {
+    name: "introcam",
+    logo: "introcam.png",
+    link: "https://introcam.pagy.site",
+    description: "Record presentation video while reading script.",
+  },
+  {
+    name: "introcam",
+    logo: "introcam.png",
+    link: "https://introcam.pagy.site",
+    description: "Record presentation video while reading script.",
+  },
 ];
 
 export const works: Work[] = [
@@ -35,10 +77,78 @@ export const works: Work[] = [
     startDate: "Jan 2025",
     endDate: "Jul 2025",
   },
+   {
+    company: "AEIG",
+    role: "FullStack dev",
+    description: "Worked on various web development projects, focusing on both frontend and backend tasks to deliver comprehensive solutions.",
+    projects: ["Job matching and recruitment platform", "Company website redesign"],
+    startDate: "Jan 2025",
+    endDate: "Jul 2025",
+  },
+   {
+    company: "AEIG",
+    role: "FullStack dev",
+    description: "Worked on various web development projects, focusing on both frontend and backend tasks to deliver comprehensive solutions.",
+    projects: ["Job matching and recruitment platform", "Company website redesign"],
+    startDate: "Jan 2025",
+    endDate: "Jul 2025",
+  },
+   {
+    company: "AEIG",
+    role: "FullStack dev",
+    description: "Worked on various web development projects, focusing on both frontend and backend tasks to deliver comprehensive solutions.",
+    projects: ["Job matching and recruitment platform", "Company website redesign"],
+    startDate: "Jan 2025",
+    endDate: "Jul 2025",
+  },
+   {
+    company: "AEIG",
+    role: "FullStack dev",
+    description: "Worked on various web development projects, focusing on both frontend and backend tasks to deliver comprehensive solutions.",
+    projects: ["Job matching and recruitment platform", "Company website redesign"],
+    startDate: "Jan 2025",
+    endDate: "Jul 2025",
+  },
+   {
+    company: "AEIG",
+    role: "FullStack dev",
+    description: "Worked on various web development projects, focusing on both frontend and backend tasks to deliver comprehensive solutions.",
+    projects: ["Job matching and recruitment platform", "Company website redesign"],
+    startDate: "Jan 2025",
+    endDate: "Jul 2025",
+  },
 ];
 
 export const articles: Article[] = [
   {
+    title: "What happens when typing www.google.com ?",
+    field: "Web",
+    platform: "Medium",
+    date: "21 June 2022",
+    link: "https://www.medium.com",
+  },
+   {
+    title: "What happens when typing www.google.com ?",
+    field: "Web",
+    platform: "Medium",
+    date: "21 June 2022",
+    link: "https://www.medium.com",
+  },
+   {
+    title: "What happens when typing www.google.com ?",
+    field: "Web",
+    platform: "Medium",
+    date: "21 June 2022",
+    link: "https://www.medium.com",
+  },
+   {
+    title: "What happens when typing www.google.com ?",
+    field: "Web",
+    platform: "Medium",
+    date: "21 June 2022",
+    link: "https://www.medium.com",
+  },
+   {
     title: "What happens when typing www.google.com ?",
     field: "Web",
     platform: "Medium",
