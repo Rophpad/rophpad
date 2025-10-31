@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import { X } from 'lucide-react';
+import { ExternalLink, X } from 'lucide-react';
+import Link from 'next/link';
 
 export default function WorkCard({
     company,
@@ -13,7 +14,7 @@ export default function WorkCard({
     company: string,
     role: string,
     description: string,
-    projects?: string[],
+    projects?: { description: string; link: string }[],
     startDate: string,
     endDate: string
 }) {
@@ -87,17 +88,25 @@ export default function WorkCard({
                                 <p className="text-gray-400">{role}</p>
                                 <p className="text-sm text-gray-500">{startDate} - {endDate}</p>
                             </div>
-                            
+
                             <div className="space-y-3">
                                 <p className="text-gray-300 leading-relaxed">{description}</p>
-                                
+
                                 {projects.length !== 0 && <div>
                                     <p className="text-white font-medium mb-2">Projects</p>
                                     <div className="space-y-1">
                                         {projects.map((project, index) => (
-                                            <div key={index} className="text-gray-400 text-sm font-mono bg-white/5 px-2 py-1 rounded border border-white/10">
-                                                {project}
-                                            </div>
+                                            <Link
+                                                href={project.link || '#'}
+                                                key={index}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className='text-gray-400 text-sm font-mono bg-white/5 px-2 py-1 rounded border border-white/10 flex items-center justify-between hover:bg-white/10 transition-colors'>
+                                                <div className="">
+                                                    {project.description}
+                                                </div>
+                                                <ExternalLink className="w-3 h-3 inline-block ml-2" />
+                                            </Link>
                                         ))}
                                     </div>
                                 </div>}
