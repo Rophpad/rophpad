@@ -34,13 +34,26 @@ export const projects: Project[] = [
 
 export const works: Work[] = [
   {
+    company: "BLOCKSOLUT",
+    role: "Frontend Engineer",
+    description: "Worked on financial web applications",
+    projects: [
+      {
+        description: "Bitcoin payment platform",
+        link: "https://beta.bitcoinflash.xyz",
+      },
+    ],
+    startDate: "Oct 2025",
+    endDate: "Now",
+  },
+  {
     company: "AEIG",
     role: "FullStack dev",
     description:
       "Worked on various web development projects, focusing on both frontend and backend tasks to deliver comprehensive solutions.",
     projects: [
       { description: "Job matching and recruitment platform", link: "" },
-      { description: "Company website redesign", link: "" },
+      { description: "Pollution signalement platform", link: "" },
     ],
     startDate: "Jan 2025",
     endDate: "Jul 2025",
@@ -66,8 +79,7 @@ export const works: Work[] = [
   {
     company: "Freelance",
     role: "Designer",
-    description:
-      "Worked on various web design projects.",
+    description: "Worked on various web design projects.",
     projects: [
       {
         description: "Notion page of my design works",
