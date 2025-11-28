@@ -103,9 +103,9 @@ export const articles: Article[] = [
 
 export const socialNetworks: { name: string; link: string }[] = [
   { name: "github", link: "https://github.com/Rophpad" },
-  // { name: "x", link: "https://github.com/Rophpad" },
+  { name: "x", link: "https://x.com/rophpad" },
   // { name: "telegram", link: "https://github.com/Rophpad" },
-  { name: "linkedIn", link: "https://github.com/Rophpad" },
-  { name: "mail", link: "https://github.com/Rophpad" },
-  { name: "discord", link: "https://github.com/Rophpad" },
+  { name: "linkedIn", link: "https://www.linkedin.com/in/rophpad/" },
+  // { name: "mail", link: "mailto:rophen.padonou@epitech.eu.com" },
+  { name: "discord", link: "https://discordapp.com/users/903280263763726376" },
 ];

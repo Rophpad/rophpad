@@ -15,9 +15,9 @@ export default function Header() {
                     />
                     {/* <span className="text-xl font-medium">ROPH PAD</span> */}
                 </Link>
-                <button className="py-2 px-6 border border-white/20 rounded-lg hover:bg-white/5 transition-colors cursor-pointer text-xs">
+                <a href="mailto:rophen.padonou@epitech.eu.com" className="py-2 px-6 border border-white/20 rounded-lg hover:bg-white/5 transition-colors cursor-pointer text-xs">
                     Get in touch
-                </button>
+                </a>
             </div>
         </header>
     );
