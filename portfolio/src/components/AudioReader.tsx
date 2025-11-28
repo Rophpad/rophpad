@@ -20,7 +20,7 @@ export default function AudioReader() {
 
     const loadAudioFile = () => {
         // Load the actual audio file
-        setAudioUrl('/audio/demo.mp3');
+        setAudioUrl('/presentation.mp3');
         setShowWaveform(true);
         
         // Generate waveform data only on client side
